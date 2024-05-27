@@ -1,0 +1,34 @@
+.filter {
+  display: flex;
+  gap: 10px;
+  padding: 5px 0;
+}
+
+.filter__input {
+
+  &:checked+.filter__label {
+    background-color: var(--clr-accent);
+  }
+}
+
+.filter__label {
+  padding: 3px 10px;
+  font-size: 14px;
+  color: var(--clr-neutral-100);
+  background-color: var(--clr-primary-400);
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+@media (hover: hover) {
+  .filter__input {
+
+    &:hover+.filter__label,
+    &:focus+.filter__label {
+      outline: thin dotted;
+      outline: 5px auto -webkit-focus-ring-color;
+    }
+  }
+}

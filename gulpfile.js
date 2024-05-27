@@ -1,9 +1,9 @@
 const {
-    src,
-    dest,
-    watch,
-    parallel,
-    series
+  src,
+  dest,
+  watch,
+  parallel,
+  series
 } = require('gulp');
 
 const scss = require('gulp-sass')(require('sass'));
@@ -19,100 +19,100 @@ const newer = require('gulp-newer');
 const svgSprite = require('gulp-svg-sprite');
 
 function sprite() {
-    return src('app/img/*.svg')
-        .pipe(svgSprite({
-            mode: {
-                stack: {
-                    sprite: '../sprite.svg',
-                    example: true
-                }
-            }
-        }))
-        .pipe(dest('app/img'))
+  return src('app/img/*.svg')
+    .pipe(svgSprite({
+      mode: {
+        stack: {
+          sprite: '../sprite.svg',
+          example: true
+        }
+      }
+    }))
+    .pipe(dest('app/img'))
 }
 
 function images() {
-    return src(['app/img/src/*.*', '!app/img/src/*.svg'])
-        // .pipe(newer('app/img'))
-        // .pipe(avift({
-        //   quality: 75
-        // }))
+  return src(['app/img/src/*.*', '!app/img/src/*.svg'])
+    // .pipe(newer('app/img'))
+    // .pipe(avift({
+    //   quality: 75
+    // }))
 
-        // .pipe(src('app/img/src/*.*'))
-        // .pipe(newer('app/img'))
-        // .pipe(webp({
-        //   quality: 75
-        // }))
+    // .pipe(src('app/img/src/*.*'))
+    // .pipe(newer('app/img'))
+    // .pipe(webp({
+    //   quality: 75
+    // }))
 
-        // .pipe(src('app/img/src/*.*'))
-        // .pipe(newer('app/img'))
-        .pipe(imagemin({
-            progressive: true,
-            svgoPlugins: [{
-                removeViewBox: false
-            }],
-            interlaced: true,
-            optimizationLevel: 3
-        }))
+    // .pipe(src('app/img/src/*.*'))
+    // .pipe(newer('app/img'))
+    .pipe(imagemin({
+      progressive: true,
+      svgoPlugins: [{
+        removeViewBox: false
+      }],
+      interlaced: true,
+      optimizationLevel: 3
+    }))
 
-        .pipe(dest('app/img'))
+    .pipe(dest('app/img'))
 }
 
 function styles() {
-    return src('app/scss/style.scss')
-        .pipe(concat('style.min.css'))
-        .pipe(scss({
-            outputStyle: 'compressed'
-        }))
-        .pipe(autoprefixer({
-            overrideBrowserslist: ['last 2 versions']
-        }))
-        .pipe(dest('app/css'))
-        .pipe(browserSync.stream())
+  return src('app/scss/style.scss')
+    .pipe(concat('style.min.css'))
+    .pipe(scss({
+      outputStyle: 'compressed'
+    }))
+    .pipe(autoprefixer({
+      overrideBrowserslist: ['last 2 versions']
+    }))
+    .pipe(dest('app/css'))
+    .pipe(browserSync.stream())
 }
 
 function scripts() {
-    return src('app/js/main.js')
-        .pipe(concat('main.min.js'))
-        .pipe(uglify())
-        .pipe(dest('app/js'))
-        .pipe(browserSync.stream())
+  return src('app/js/main.js')
+    .pipe(concat('main.min.js'))
+    .pipe(uglify())
+    .pipe(dest('app/js'))
+    .pipe(browserSync.stream())
 }
 
 function watching() {
-    watch(['app/scss/**/*.scss'], styles)
-    // watch(['app/img/src'], images)
-    watch(['app/js/main.js'], scripts)
-    watch(['app/*.html']).on('change', browserSync.reload)
+  watch(['app/scss/**/*.scss'], styles)
+  // watch(['app/img/src'], images)
+  watch(['app/js/main.js'], scripts)
+  watch(['app/*.html']).on('change', browserSync.reload)
 }
 
 function browsersync() {
-    browserSync.init({
-        server: {
-            baseDir: "app/"
-        },
-        browser: 'chrome'
-    });
+  browserSync.init({
+    server: {
+      baseDir: "app/"
+    },
+    browser: 'chrome'
+  });
 }
 
 function building() {
-    return src([
-            'app/css/style.min.css',
-            'app/img/*.*',
-            // '!app/img/*.svg',
-            // 'app/img/sprite.svg',
-            'app/fonts/*.*',
-            'app/js/*.min.js',
-            'app/*.html'
-        ], {
-            base: 'app'
-        })
-        .pipe(dest('docs'))
+  return src([
+      'app/css/style.min.css',
+      'app/img/*.*',
+      // '!app/img/*.svg',
+      // 'app/img/sprite.svg',
+      'app/fonts/*.*',
+      'app/js/*.min.js',
+      'app/*.html'
+    ], {
+      base: 'app'
+    })
+    .pipe(dest('docs'))
 }
 
 function cleanDocs() {
-    return src('docs')
-        .pipe(clean())
+  return src('docs')
+    .pipe(clean())
 }
 
 exports.styles = styles;

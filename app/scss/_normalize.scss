@@ -3,6 +3,10 @@ html {
 	-webkit-text-size-adjust: 100%;
 }
 
+body {
+	margin: 0;
+}
+
 main {
 	display: block;
 }
@@ -25,7 +29,6 @@ pre {
 
 a {
 	background-color: transparent;
-	text-decoration: none;
 }
 
 abbr[title] {
@@ -67,10 +70,7 @@ sup {
 }
 
 img {
-	max-width: 100%;
-	height: auto;
 	border-style: none;
-	box-sizing: content-box;
 }
 
 button,
@@ -176,21 +176,4 @@ template {
 
 [hidden] {
 	display: none;
-}
-
-html,
-body {
-	margin: 0;
-	padding: 0;
-}
-
-.visually-hidden {
-	position: absolute !important;
-	clip: rect(1px 1px 1px 1px);
-	clip: rect(1px, 1px, 1px, 1px);
-	padding: 0 !important;
-	border: 0 !important;
-	height: 1px !important;
-	width: 1px !important;
-	overflow: hidden;
 }
