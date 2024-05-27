@@ -1,4 +1,4 @@
-mfgbd = [{
+const mfgbd = [{
         "name": "Во все тяжкие",
         "link": {
             "video": "http://seasonvar.ru/serial-884-Vo_vse_tyazhkie--001--sezon.html",
