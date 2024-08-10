@@ -92,7 +92,7 @@ const seriesData = [{
     "duration": {
         "state": false,
         "season": 7,
-        "episode": 0
+        "episode": 1
     }
 }, {
     "name": "Стрела",
@@ -343,8 +343,8 @@ const seriesData = [{
     "finished": true,
     "duration": {
         "state": false,
-        "season": 5,
-        "episode": 22
+        "season": 6,
+        "episode": 1
     }
 }, {
     "name": "Декстер",
@@ -907,8 +907,8 @@ const seriesData = [{
     "finished": false,
     "duration": {
         "state": false,
-        "season": 1,
-        "episode": 4
+        "season": 2,
+        "episode": 1
     }
 }, {
     "name": "Ривердэйл",
@@ -1307,6 +1307,18 @@ const seriesData = [{
         "episode": 0
     }
 }, {
+    "name": "Офис (UK)",
+    "en": "The Office (UK)",
+    "picture": {
+        "local": "the_office_uk"
+    },
+    "finished": true,
+    "duration": {
+        "state": true,
+        "season": 2,
+        "episode": 0
+    }
+}, {
     "name": "Офис",
     "en": "The Office",
     "picture": {
@@ -1470,7 +1482,7 @@ const seriesData = [{
     },
     "finished": false,
     "duration": {
-        "state": false,
+        "state": true,
         "season": 3,
         "episode": 0
     }
@@ -1557,5 +1569,41 @@ const seriesData = [{
         "state": false,
         "season": 1,
         "episode": 0
+    }
+}, {
+    "name": "Телохранитель",
+    "en": "Bodyguard",
+    "picture": {
+        "local": "bodyguard"
+    },
+    "finished": true,
+    "duration": {
+        "state": true,
+        "season": 1,
+        "episode": 0
+    }
+}, {
+    "name": "Сайнфелд",
+    "en": "Seinfeld",
+    "picture": {
+        "local": "seinfeld"
+    },
+    "finished": true,
+    "duration": {
+        "state": false,
+        "season": 1,
+        "episode": 4
+    }
+}, {
+    "name": "Ки и Пил",
+    "en": "Key & Peele",
+    "picture": {
+        "local": "key_&_peele"
+    },
+    "finished": true,
+    "duration": {
+        "state": false,
+        "season": 1,
+        "episode": 3
     }
 }];
