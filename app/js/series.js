@@ -91,7 +91,7 @@ const seriesData = [{
     "finished": false,
     "duration": {
         "state": false,
-        "season": 7,
+        "season": 9,
         "episode": 1
     }
 }, {
@@ -140,6 +140,18 @@ const seriesData = [{
     "duration": {
         "state": false,
         "season": 6,
+        "episode": 0
+    }
+}, {
+    "name": "Линкольн для адвоката",
+    "en": "The Lincoln Lawyer",
+    "picture": {
+        "local": "the_lincoln_lawyer"
+    },
+    "finished": false,
+    "duration": {
+        "state": true,
+        "season": 2,
         "episode": 0
     }
 }, {
@@ -511,8 +523,8 @@ const seriesData = [{
     "finished": false,
     "duration": {
         "state": false,
-        "season": 1,
-        "episode": 5
+        "season": 2,
+        "episode": 0
     }
 }, {
     "name": "Доктор Хаус",
